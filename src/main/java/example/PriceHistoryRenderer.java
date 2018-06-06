@@ -20,7 +20,7 @@ public class PriceHistoryRenderer extends DefaultTableCellRenderer
     // value is a Price
     Price p = (Price)value;
 
-    String s = (column == 0) ? p.getTwoWayPrice() : formatter.format(p.getTimestamp());
+    String s = (table.convertColumnIndexToModel(column) == 0) ? p.getTwoWayPrice() : formatter.format(p.getTimestamp());
 
     return super.getTableCellRendererComponent(table, s, isSelected, hasFocus, row, column);
   }
